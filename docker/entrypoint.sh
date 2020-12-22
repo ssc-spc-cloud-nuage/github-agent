@@ -3,6 +3,10 @@ set -eEuo pipefail
 
 if [[ "$@" == "bash" ]]; then
     exec $@
+
+elif [[ -f ".runner" ]]; then
+    echo "Runner already configured. Skipping config."
+
 else
 
   TOKEN=$(curl -s -X POST -H "authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/runners/registration-token" | jq -r .token)
@@ -15,3 +19,5 @@ else
     --work _work
 
 fi
+
+exec "$@"
