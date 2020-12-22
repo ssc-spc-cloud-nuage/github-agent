@@ -24,6 +24,6 @@ RUN chown -R root:root . \
     && /home/actions/actions-runner/tools/installtools.sh \    
     && rm -rf /home/actions/actions-runner/tools
 
-COPY entrypoint.sh .
+COPY ./entrypoint.sh .
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
