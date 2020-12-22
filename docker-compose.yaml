@@ -2,12 +2,13 @@ version: "3.7"
 
 services:
   runner:
-    image: ssccloudspcnuage/github-agent:latest
+    image: ssccloudspcnuage/github-runner:latest
     restart: always
     environment:
-      RUNNER_NAME: "github-runner"
+      RUNNER_NAME: ${RUNNER_NAME}
       REPO_OWNER: ${REPO_OWNER}
       REPO_NAME: ${REPO_NAME}
       GITHUB_TOKEN: ${GITHUB_TOKEN}
+      RUNNER_ALLOW_RUNASROOT: 1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

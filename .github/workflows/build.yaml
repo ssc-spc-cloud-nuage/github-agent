@@ -7,7 +7,7 @@ on:
   release:
 
 env:
-  IMAGE_NAME: ssccloudspcnuage/github-agent
+  IMAGE_NAME: ssccloudspcnuage/github-runner
   IMAGE_TAG: ${{ github.event_name != 'release' && github.sha || github.event.release.tag_name }}
 
 jobs:
@@ -17,7 +17,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
-
       - uses: docker/setup-buildx-action@v1
 
       - name: Login to DockerHub

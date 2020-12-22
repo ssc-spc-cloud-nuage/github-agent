@@ -1,4 +1,4 @@
-APP_NAME="ssccloudspcnuage/github-agent"
+APP_NAME="ssccloudspcnuage/github-runner"
 
 # HELP
 # This will output the help for each task
