@@ -1,0 +1,35 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+
+env:
+  IMAGE_NAME: ssccloudspcnuage/github-agent
+  IMAGE_TAG: ${{ github.event_name != 'release' && github.sha || github.event.release.tag_name }}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }},${{ env.IMAGE_NAME }}:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
