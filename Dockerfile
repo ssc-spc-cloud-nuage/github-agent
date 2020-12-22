@@ -10,7 +10,7 @@ RUN \
   mkdir -p /home/actions/actions-runner \
     && cd /home/actions/actions-runner \
     && wget https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
-    && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
+    && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     && rm ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
@@ -20,7 +20,7 @@ WORKDIR /home/actions/actions-runner
 
 COPY ./tools ./tools
 RUN /home/actions/actions-runner/bin/installdependencies.sh \
-    # && /home/actions/actions-runner/tools/installtools.sh \    
+    && /home/actions/actions-runner/tools/installtools.sh \    
     && rm -rf /home/actions/actions-runner/tools
 
 COPY entrypoint.sh .
