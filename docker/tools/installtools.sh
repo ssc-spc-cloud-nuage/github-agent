@@ -17,3 +17,6 @@ for f in "${SCRIPT_PATH}"/install/*.sh; do
         exit 1;
     fi
 done
+
+rm -rf /var/lib/apt/lists/*
+apt-get clean
