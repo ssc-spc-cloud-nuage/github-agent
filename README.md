@@ -1,7 +1,7 @@
 # GitHub Runner
 A Ubuntu 20.04 Docker image with the latest GitHub runner and some supporting tools from the [official VM images](https://github.com/actions/virtual-environments).
 
-# Run with docker-compose.yml
+# Run with docker-compose
 
 Create a `.env` file with the following:
 
@@ -16,6 +16,18 @@ And run with:
 
 ```sh
 make compose
+```
+
+# Build image locally
+
+```sh
+make build
+```
+
+Once the build is finished, you can debug with:
+
+```sh
+make shell
 ```
 
 # Credit
