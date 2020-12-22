@@ -19,7 +19,7 @@ RUN chmod 644 /etc/supervisor/conf.d/supervisord.conf
 WORKDIR /home/actions/actions-runner
 
 COPY ./tools ./tools
-RUN chown -R root:root .
+RUN chown -R root:root . \
     && /home/actions/actions-runner/bin/installdependencies.sh \
     && /home/actions/actions-runner/tools/installtools.sh \    
     && rm -rf /home/actions/actions-runner/tools
