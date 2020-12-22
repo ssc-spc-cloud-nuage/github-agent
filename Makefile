@@ -10,7 +10,7 @@ help: ## This help.
 .DEFAULT_GOAL := help
 
 build: ## Build the image
-	docker build -t $(APP_NAME) .
+	docker build -t $(APP_NAME) ./docker
 
 compose: ## Run using docker-compose
 	docker-compose up -d

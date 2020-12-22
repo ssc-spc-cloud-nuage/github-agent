@@ -1,7 +1,7 @@
 # GitHub Runner
 A Ubuntu 20.04 Docker image with the latest GitHub runner and some supporting tools from the [official VM images](https://github.com/actions/virtual-environments).
 
-# Using docker-compose.yml
+# Run with docker-compose.yml
 
 Create a `.env` file with the following:
 
@@ -9,13 +9,13 @@ Create a `.env` file with the following:
 RUNNER_NAME=github-runner
 REPO_OWNER=repo-owner       # https://github.com/repo-owner
 REPO_NAME=repo-name         # https://github.com/repo-owner/repo-name
-GITHUB_TOKEN=GitHub-Personal-Access-Token
+GITHUB_TOKEN=GitHub-PAT     # Personal access token with either "repo" or "admin:org" scope
 ```
 
 And run with:
 
 ```sh
-docker-compose up -d
+make compose
 ```
 
 # Credit
