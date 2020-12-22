@@ -1,5 +1,5 @@
 # GitHub Runner
-A Ubuntu 20.04 Docker image with the latest GitHub runner and some supporting tools from the [official VM images](https://github.com/actions/virtual-environments).
+Ubuntu 20.04 Docker image with the latest GitHub runner and some supporting tools from the [official VM image](https://github.com/actions/virtual-environments).
 
 # Run with docker-compose
 
