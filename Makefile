@@ -12,6 +12,9 @@ help: ## This help.
 build: ## Build the image
 	docker build -t $(APP_NAME) .
 
+compose: ## Run using docker-compose
+	docker-compose up -d
+
 shell: ## Creates a shell inside the container for debug purposes
 	docker run -it $(APP_NAME) bash
 

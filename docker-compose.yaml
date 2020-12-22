@@ -3,6 +3,7 @@ version: "3.7"
 services:
   runner:
     image: ssccloudspcnuage/github-agent:latest
+    restart: always
     environment:
       RUNNER_NAME: "github-runner"
       REPO_OWNER: ${REPO_OWNER}
