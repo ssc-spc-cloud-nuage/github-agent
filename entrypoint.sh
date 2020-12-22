@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 set -eEuo pipefail
 
-TOKEN=$(curl -s -X POST -H "authorization: token ${TOKEN}" "https://api.github.com/repos/${OWNER}/${REPO}/actions/runners/registration-token" | jq -r .token)
+if [[ "$@" == "bash" ]]; then
+    exec $@
+else
 
-cleanup() {
-  ./config.sh remove --token "${TOKEN}"
-}
+  TOKEN=$(curl -s -X POST -H "authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/runners/registration-token" | jq -r .token)
 
-./config.sh \
-  --url "https://github.com/${OWNER}/${REPO}" \
-  --token "${TOKEN}" \
-  --name "${NAME}" \
-  --unattended \
-  --work _work
+  ./config.sh \
+    --url "https://github.com/${REPO_OWNER}/${REPO_NAME}" \
+    --token "${TOKEN}" \
+    --name "${RUNNER_NAME}" \
+    --unattended \
+    --work _work
 
-./runsvc.sh
-
-cleanup
+fi
