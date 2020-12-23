@@ -12,3 +12,7 @@ services:
       RUNNER_ALLOW_RUNASROOT: 1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - config:/home/actions/actions-runner
+
+volumes:
+  config:
