@@ -31,5 +31,5 @@ make shell
 ```
 
 # Credit
-* Tool install scripts from [actions/virtual-environments](https://github.com/actions/virtual-environments/tree/main/images/linux/scripts).
+* Tool install scripts from [actions/virtual-environments](https://github.com/actions/virtual-environments/tree/main/images/linux/scripts)
 * Configuration from [tcardonne/docker-github-runner](https://github.com/tcardonne/docker-github-runner)
