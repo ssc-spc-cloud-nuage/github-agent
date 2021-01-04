@@ -7,9 +7,10 @@ Create a `.env` file with the following:
 
 ```sh
 RUNNER_NAME=github-runner
-REPO_OWNER=repo-owner       # https://github.com/repo-owner
-REPO_NAME=repo-name         # https://github.com/repo-owner/repo-name
+RUNNER_REPO_URL=https://github.com/org-name/repo-name       # Runner for a single repo
+# RUNNER_ORG_URL=https://github.com/org-name                # Runner for an organization
 GITHUB_TOKEN=GitHub-PAT     # Personal access token with either "repo" or "admin:org" scope
+                            # Note: the user that creates the token must be an admin for the repo or org
 ```
 
 And run with:
