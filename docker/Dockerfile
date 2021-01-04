@@ -14,7 +14,7 @@ RUN RUNNER_VERSION=${RUNNER_VERSION:-$(curl --silent "https://api.github.com/rep
     && tar -zxf actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     && rm -f actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
-COPY ./tools ./tools \
+COPY ./tools ./tools
 RUN chown -R root: /home/runner \
     && ./bin/installdependencies.sh \
     && ./tools/installtools.sh \    
