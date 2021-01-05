@@ -7,13 +7,20 @@ Create a `.env` file with the following:
 
 ```sh
 RUNNER_NAME=github-runner
-RUNNER_REPO_URL=https://github.com/org-name/repo-name       # Runner for a single repo
-# RUNNER_ORG_URL=https://github.com/org-name                # Runner for an organization
-GITHUB_TOKEN=GitHub-PAT     # Personal access token with either "repo" or "admin:org" scope
-                            # Note: the user that creates the token must be an admin for the repo or org
+RUNNER_REPO_URL=https://github.com/org-name/repo-name   # Runner for a repo; or
+# RUNNER_ORG_URL=https://github.com/org-name            # Runner for an organization
+GITHUB_TOKEN=GitHub-PAT                                 # Personal access token with either "repo" or "admin:org" scope
+                                                        # Note: token must be for an admin user for the repo or org
 ```
 
-And run with:
+If you use Docker actions in your workflow: 
+
+1. create a `/home/runner/_work` directory; and
+2. uncomment the volume mount in docker-compose.yaml.  
+
+This volume will be used to share the checked out repo with the Docker actions.   
+
+Finally, run with:
 
 ```sh
 make compose

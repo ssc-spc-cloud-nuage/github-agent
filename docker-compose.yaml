@@ -11,8 +11,9 @@ services:
       GITHUB_TOKEN: ${GITHUB_TOKEN}
       RUNNER_ALLOW_RUNASROOT: 1
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - config:/home/actions/actions-runner
+      - /var/run/docker.sock:/var/run/docker.sock      
+      - config:/home/runner
+      # - /home/runner/_work:/home/runner/_work
 
 volumes:
   config:
