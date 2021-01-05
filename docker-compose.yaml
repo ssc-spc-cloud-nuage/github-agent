@@ -6,8 +6,8 @@ services:
     restart: always
     environment:
       RUNNER_NAME: ${RUNNER_NAME}
-      REPO_OWNER: ${REPO_OWNER}
-      REPO_NAME: ${REPO_NAME}
+      RUNNER_REPO_URL: ${RUNNER_REPO_URL}
+      # RUNNER_ORG_URL: ${RUNNER_ORG_URL}
       GITHUB_TOKEN: ${GITHUB_TOKEN}
       RUNNER_ALLOW_RUNASROOT: 1
     volumes:
