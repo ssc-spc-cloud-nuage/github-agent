@@ -2,6 +2,14 @@ FROM ubuntu:20.04
 
 ENV RUNNER_VERSION=2.275.1
 
+ENV RUNNER_NAME=""
+ENV RUNNER_TOKEN=""
+ENV RUNNER_REPO_URL=""
+ENV RUNNER_ORG_URL=""
+ENV RUNNER_TOKEN=""
+ENV RUNNER_ALLOW_RUNASROOT=true
+ENV GITHUB_TOKEN=""
+
 RUN apt-get -yqq update && apt-get install -yqq curl jq wget software-properties-common supervisor 
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
