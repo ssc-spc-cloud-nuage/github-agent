@@ -1,4 +1,4 @@
-APP_NAME="ssccloudspcnuage/github-runner"
+APP_NAME="sscspccloudnuage/github-runner"
 
 # HELP
 # This will output the help for each task
@@ -14,7 +14,7 @@ build: ## Build the image
 
 compose: ## Run using docker-compose
 	docker-compose up -d
-
+	
 shell: ## Creates a shell inside the container for debug purposes
 	docker run -it $(APP_NAME) bash
 

@@ -15,7 +15,7 @@ GITHUB_TOKEN=GitHub-PAT                                 # Personal access token 
 
 If you use Docker actions in your workflow: 
 
-1. create a `/home/runner/_work` directory; and
+1. create a `/home/runner/_work` directory (optional as docker-compose will create it if missing in most cases...); and
 2. uncomment the volume mount in docker-compose.yaml.  
 
 This volume will be used to share the checked out repo with the Docker actions.   
