@@ -9,9 +9,8 @@ services:
       RUNNER_REPO_URL: ${RUNNER_REPO_URL}
       GITHUB_TOKEN: ${GITHUB_TOKEN}
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock      
       - config:/home/runner
-      # - /home/bernard/_work:/home/runner/_work
+    privileged: true
 
 volumes:
   config:

@@ -12,11 +12,14 @@ help: ## This help.
 build: ## Build the image
 	docker build -t $(APP_NAME) ./docker
 
-compose: ## Run using docker-compose
+up: ## Run using docker-compose
 	docker-compose up -d
 	
+down: ## Run using docker-compose
+	docker-compose down
+
 shell: ## Creates a shell inside the container for debug purposes
-	docker run -it $(APP_NAME) bash
+	docker run -it --privileged $(APP_NAME) bash
 
 shell-compose: ## Creates a shell inside the docker-compose service for debug purposes
 	docker-compose run --rm runner bash
